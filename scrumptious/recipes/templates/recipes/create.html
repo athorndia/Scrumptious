@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe_object.title }} - Scrumptious Recipes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipes.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class = "frame">
+                <button class="custom-btn btn-7"><a href="{% url 'recipe_list' %}"><strong>Main page</strong></a></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form method="post">    <!-- The form tag will make an HTTP POST (because of method="post") back to the same URL. -->
+            {% csrf_token %}    <!-- The form.as_p creates all of the HTML for the fields that we defined on the RecipeForm. -->
+            {{ form.as_p }}     <!-- The csrf_token creates a hidden input tag that contains a security token. -->
+            <button type="submit">Create</button>
+    </main>
+    <footer>
+        Made with love by Scrumptious Recipes
+    </footer>
+</body>
+</html>

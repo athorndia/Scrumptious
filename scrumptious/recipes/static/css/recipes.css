@@ -1,0 +1,209 @@
+/* recipies.css: Contains what the "detail" page for a specific recipe would look like. */
+
+/*
+Tropical Fruit Punch Color Panel - https://color.adobe.com/Tropical-Fruit-Punch-color-theme-822847/
+#FF5A33 - Portland Orange
+#FFEC5C - Corn
+#B4CF66 - Green Glow
+#44803F - Online Lime
+#146152 - Philodendron
+
+Woodsy Wilderness Color Panel - https://color.adobe.com/explore
+#014040 - Rich Black
+#02735E - Tropical Rainforest
+#03A678 - Blarney
+#F27405 - Mee-hua Sunset
+#731702 - Cedar Wood Finish
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  flex-direction: row;
+  width: 100%;
+}
+
+main {
+  background-color: #f2f2f2;
+  padding: 16px;
+}
+
+footer {
+  padding: 24px 0;
+  background-color: #B4CF66;
+  /* margin-top: 32px; */
+  /* padding: 32px; */
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+/*Flexbox for nav menus, forms, and content containers.*/
+nav {
+  background-color: #FF5A33;
+  border-bottom: 1px solid black;
+  padding: 16px;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #146152;
+}
+
+h1 {
+  color: #02735E;
+}
+
+h3 a {
+  color: #731702;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  padding: 20px 50px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ingredients-table tr:nth-child(odd) {
+  background-color: rgb(204, 245, 243);
+}
+
+.ingredients-table th {
+  background-color: #02735E;
+  color: white;
+  padding: 5px;
+  text-align: left;
+}
+
+.ingredients-table tr:hover {
+  background-color: #ddd;
+}
+
+.frame {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  margin: 0;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+/* 7 */
+.btn-7 {
+background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-7 a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-7:before,
+.btn-7:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+.btn-7:before{
+   height: 0%;
+   width: 2px;
+}
+.btn-7:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-7:hover{
+  color: rgba(251,75,2,1);
+  background: transparent;
+}
+.btn-7:hover:before {
+  height: 100%;
+}
+.btn-7:hover:after {
+  width: 100%;
+}
+.btn-7 a:before,
+.btn-7 a:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+   -7px -7px 20px 0px rgba(255,255,255,.9),
+   -4px -4px 5px 0px rgba(255,255,255,.9),
+   7px 7px 20px 0px rgba(0,0,0,.2),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+.btn-7 a:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-7 a:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-7 a:hover:before {
+  height: 100%;
+}
+.btn-7 a:hover:after {
+  width: 100%;
+}

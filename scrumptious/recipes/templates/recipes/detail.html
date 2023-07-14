@@ -1,0 +1,78 @@
+<!-- detail.html: Contains what the "detail" page for a specific recipe would look like. -->
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe_object.title }} - Scrumptious Recipes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/recipes.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class = "frame">
+                <button class="custom-btn btn-7"><a href="{% url 'recipe_list' %}"><strong>Main page</strong></a></button>
+                <button class="custom-btn btn-7"><a href="{% url 'edit_recipe' recipe_object.id %}"><strong>Edit recipe</strong></a></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>{{ recipe_object.title }}</h1>
+        <img src="{{ recipe_object.picture }}"> <!-- alt = ""?-->
+        <div>4.3 stars</div>
+        <p>{{ recipe_object.description }}</p>
+        <p>{{ recipe.created_on|date:"F j, Y" }}</p>
+        {% comment %} <p>{{ recipe_object.prep_time }}</p>
+        <p>{{ recipe_object.cook_time }}</p>
+        <p>{{ recipe_object.serving_size }}</p> {% endcomment %}
+        <h2>Ingredients</h2>
+        <table class = "ingredients-table">
+            <thead>
+                <tr>
+                <th><strong>Amount</strong></th>
+                <th><strong>Food item</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>1 cup</td>
+                <td>Green beans</td>
+                </tr>
+                <tr>
+                <td>3 ears</td>
+                <td>Fresh corn</td>
+                </tr>
+                <tr>
+                <td>2 cups</td>
+                <td>Tomatillo salsa</td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td>Corn tortillas</td>
+                </tr>
+                <tr>
+                <td>0.5 cups</td>
+                <td>Cotija cheese</td>
+                </tr>
+            </tbody>
+            </table>
+        <h2>Steps</h2>
+        <ol>
+            <li>Blanch the green beans</li>
+            <li>Grill the green beans and the ears of corn</li>
+            <li>Chop the green beans</li>
+            <li>Slice the corn off the cob</li>
+            <li>Grill the tortillas</li>
+            <li>Assemble the tacos with veggies, salsa, and cheese</li>
+        </ol>
+    </main>
+    <footer>
+        Made with love by Scrumptious Recipes
+    </footer>
+</body>
+</html>
